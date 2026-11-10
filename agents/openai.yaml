@@ -1,0 +1,7 @@
+interface:
+  display_name: "Document Diagrams"
+  short_description: "Render reviewable Mermaid diagrams for Markdown docs"
+  default_prompt: "Use $document-diagrams to add and verify diagrams for this implementation document."
+
+policy:
+  allow_implicit_invocation: true

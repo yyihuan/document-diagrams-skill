@@ -21,12 +21,12 @@ Make architecture, design, implementation, workflow, and data-model documents in
 
 ## Render and verify
 
-Use the bundled renderer after creating or editing a source:
+Set DIAGRAM_SKILL_ROOT to the absolute directory containing this SKILL.md. Install pinned dependencies with npm ci in that directory when absent; never silently upgrade. Use the bundled renderer after creating or editing a source:
 
 ```bash
-node ${DIAGRAM_SKILL_ROOT}/scripts/diagram.mjs render docs/diagrams/request-lifecycle.mmd
-node ${DIAGRAM_SKILL_ROOT}/scripts/diagram.mjs check docs/diagrams
-node ${DIAGRAM_SKILL_ROOT}/scripts/diagram.mjs check docs/architecture.md
+node "$DIAGRAM_SKILL_ROOT/scripts/diagram.mjs" render docs/diagrams/request-lifecycle.mmd
+node "$DIAGRAM_SKILL_ROOT/scripts/diagram.mjs" check docs/diagrams
+node "$DIAGRAM_SKILL_ROOT/scripts/diagram.mjs" check docs/architecture.md
 ```
 
 Use `render-all <directory>` and `check-all <directory>` for a diagram directory. Inspect the resulting SVG in the target Markdown renderer when visual layout matters.
@@ -48,3 +48,7 @@ Record the exception in `docs/diagrams/ISSUES.md` with date, document and headin
 - If rendering fails, keep the `.mmd` source, report the parser or renderer error, and do not replace it with a hand-drawn SVG.
 - If `check` reports an old or missing SVG, re-render before declaring the documentation complete.
 - If a target project has an explicit stricter documentation policy, follow it while retaining the single-source and freshness guarantees above.
+
+## Publication quality
+
+Read [publication-quality.md](references/publication-quality.md) for accessible, evidence-backed diagrams and current renderer choices. Preserve the preference for useful diagrams across a document; cover distinct questions rather than filling a quota. Syntax success does not establish factual accuracy.
